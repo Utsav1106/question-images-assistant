@@ -1,0 +1,170 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-default-50: var(--default-50);
+  --color-default-100: var(--default-100);
+  --color-default-200: var(--default-200);
+  --color-default-300: var(--default-300);
+  --color-default-400: var(--default-400);
+  --color-default-500: var(--default-500);
+  --color-default-600: var(--default-600);
+  --color-default-700: var(--default-700);
+  --color-default-800: var(--default-800);
+  --color-default-900: var(--default-900);
+
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+
+  --color-success-50: var(--success-50);
+  --color-success-100: var(--success-100);
+  --color-success-200: var(--success-200);
+  --color-success-300: var(--success-300);
+  --color-success-400: var(--success-400);
+  --color-success-500: var(--success-500);
+  --color-success-600: var(--success-600);
+  --color-success-700: var(--success-700);
+  --color-success-800: var(--success-800);
+  --color-success-900: var(--success-900);
+
+  --color-danger-50: var(--danger-50);
+  --color-danger-100: var(--danger-100);
+  --color-danger-200: var(--danger-200);
+  --color-danger-300: var(--danger-300);
+  --color-danger-400: var(--danger-400);
+  --color-danger-500: var(--danger-500);
+  --color-danger-600: var(--danger-600);
+  --color-danger-700: var(--danger-700);
+  --color-danger-800: var(--danger-800);
+  --color-danger-900: var(--danger-900);
+
+  --color-warning-50: var(--warning-50);
+  --color-warning-100: var(--warning-100);
+  --color-warning-200: var(--warning-200);
+  --color-warning-300: var(--warning-300);
+  --color-warning-400: var(--warning-400);
+  --color-warning-500: var(--warning-500);
+  --color-warning-600: var(--warning-600);
+  --color-warning-700: var(--warning-700);
+  --color-warning-800: var(--warning-800);
+  --color-warning-900: var(--warning-900);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-sidebar: var(--sidebar);
+  --color-chat-bg: var(--chat-bg);
+  --color-message-user: var(--message-user);
+  --color-message-assistant: var(--message-assistant);
+
+
+}
+
+:root {
+  --default-50: #f8fafc;
+  --default-100: #f1f5f9;
+  --default-200: #e2e8f0;
+  --default-300: #cbd5e1;
+  --default-400: #94a3b8;
+  --default-500: #64748b;
+  --default-600: #475569;
+  --default-700: #334155;
+  --default-800: #1e293b;
+  --default-900: #0f172a;
+
+  --primary-50: #eef2ff;
+  --primary-100: #e0e7ff;
+  --primary-200: #c7d2fe;
+  --primary-300: #a5c6fc;
+  --primary-400: #819bf8;
+  --primary-500: #6376f1;
+  --primary-600: #4666e5;
+  --primary-700: #4338ca;
+  --primary-800: #3730a3;
+  --primary-900: #312e81;
+
+  --success-50: #ecfdf5;
+  --success-100: #d1fae5;
+  --success-200: #a7f3d0;
+  --success-300: #6ee7b7;
+  --success-400: #34d399;
+  --success-500: #10b981;
+  --success-600: #059669;
+  --success-700: #047857;
+  --success-800: #065f46;
+  --success-900: #064e3b;
+
+  --danger-50: #fef2f2;
+  --danger-100: #fee2e2;
+  --danger-200: #fecaca;
+  --danger-300: #fca5a5;
+  --danger-400: #f87171;
+  --danger-500: #ef4444;
+  --danger-600: #dc2626;
+  --danger-700: #b91c1c;
+  --danger-800: #991b1b;
+  --danger-900: #7f1d1d;
+
+  --warning-50: #fffbeb;
+  --warning-100: #fef3c7;
+  --warning-200: #fde68a;
+  --warning-300: #fcd34d;
+  --warning-400: #fbbf24;
+  --warning-500: #f59e0b;
+  --warning-600: #d97706;
+  --warning-700: #b45309;
+  --warning-800: #92400e;
+  --warning-900: #78350f;
+
+  --background: #ffffff;
+  --foreground: #3a3a3a;
+  --muted: #f8fafc;
+  --border: #e2e8f0;
+  --sidebar: #ffffff;
+  --chat-bg: #f1f5f9;
+  --message-user: #4f46e5;
+  --message-assistant: #ffffff;
+}
+
+.dark {
+  --default-50: #303030;
+  --default-100: #383838;
+  --default-200: #545454;
+  --default-300: #6b6b6b;
+  --default-400: #888888;
+  --default-500: #b6b6b6;
+  --default-600: #dfdfdf;
+  --default-700: #efefef;
+  --default-800: #f7f7f7;
+  --default-900: #f8fafc;
+
+  --background: #252525;
+  --foreground: #f8fafc;
+  --muted: #3f3f3f;
+  --border: #4e4f50;
+  --sidebar: #313335;
+  --chat-bg: #252526;
+  --message-user: #6b64e6;
+  --message-assistant: #2f3134;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  scrollbar-width: 0px;
+  font-family: var(--font-share-tech), var(--font-montserrat), sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+}
