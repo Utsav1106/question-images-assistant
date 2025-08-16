@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, Response, request, jsonify
 import os
 from werkzeug.utils import secure_filename
 from services.assistant import HomeworkAnswerAssistant
@@ -163,7 +163,7 @@ def ask_assistant(source_name):
         result = assistant.process_content(ocr_content, text_input, user_corrections)
         if result.get("error"):
             return jsonify(result), 500
-
+        
         user_input = f"Text: {text_input}\n" if text_input else ""
         if ocr_content:
             user_input += f"OCR Content: {ocr_content[:200]}..." if len(ocr_content) > 200 else f"OCR Content: {ocr_content}"
@@ -183,13 +183,19 @@ def ask_assistant(source_name):
 
         assistant.add_to_chat_history(user_input, history_response)
 
-        return jsonify({
+        clean_result = {str(k): v for k, v in result.items()}
+        response_data = {
             "type": result.get("type", "answer"),
-            "result": result,
+            "result": clean_result,
             "source_name": source_name,
             "files_processed": len(files) if files and files[0].filename else 0,
             "chat_history_length": len(assistant.get_chat_history())
-        })
+        }
+
+        json_response = json.dumps(response_data, sort_keys=False)
+
+        return Response(response=json_response, status=200, mimetype="application/json")
+    
     except Exception as e:
         print(e)
         return jsonify({"error": f"An error occurred: {str(e)}"}), 500
